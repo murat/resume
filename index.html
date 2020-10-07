@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Murat Bastas</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6de42fce-c7db-49c5-b6b7-3e2ad43a03d3" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="murat.jpg"/></div><h1 class="page-title">Murat Bastas</h1></header><div class="page-body"><blockquote id="0661e2c6-cced-4d75-bd0d-924ba5c821f6" class="">I&#x27;m a software developer based in Samsun / Turkey with 10 years of experience in the software(web) industry. </blockquote><h1 id="2427bb4f-9797-4111-821b-9ca3b070b329" class="">Contact information</h1><p id="3b9dff48-1966-4ea1-8d4c-e9dfa3d97dfd" class=""><a href="mailto:muratbsts@gmail.com">muratbsts@gmail.com</a></p><p id="aeb33ce9-b1e5-47c0-8e49-d65783bd6f6d" class=""><a href="https://github.com/murat">https://github.com/murat</a></p><p id="eb1dbff5-4e22-4331-87f4-ccaebac92d06" class=""><a href="https://twitter.com/muratbastas">https://twitter.com/muratbastas</a></p><p id="aba8004a-e088-4b72-b85f-6c81420aa605" class=""><a href="https://linkedin.com/in/muratbastas">https://linkedin.com/in/muratbastas</a></p><p id="617dadc7-46ce-437d-8a1a-1e8d63cb5adb" class=""><a href="https://stackoverflow.com/users/6668082/murat-ba%c5%9fta%c5%9f">https://stackoverflow.com/users/6668082/murat-baştaş</a></p><hr id="cde9c59c-70bd-446d-a2c5-087991d79880"/><h1 id="11b5168f-8281-4314-ba62-5d0607168cf5" class="">Work experience</h1><h2 id="47b018fe-bb27-42bc-8b9c-5f9b890f5105" class="">Vispera Information Technologies</h2><p id="174214cf-4ac2-4954-8f31-c01dc3abb91e" class="block-color-gray">Software Developer<em>, Istanbul – (2017 Oct - Today)</em></p><p id="9eaca5af-d010-48e7-af77-22dc5c56e1d2" class="">We are developing a service to retailers using image recognition to analyze and report their sales. Especially, I&#x27;m working on the cloud/web services of the system. Our stack is including Ruby, RoR, Golang, and Elixir. We&#x27;re using postgreSQL, redis and elasticsearch.</p><h2 id="8dfed757-c091-4711-87c5-3842ed35be4a" class="">omg!medya PR Agency</h2><p id="484cf2b6-cb88-47cd-bdbf-c510f8f66231" class="block-color-gray">Web Developer<em>, Istanbul – (2015 Jan - 2017 Oct)</em></p><p id="30dbfc4c-3c0f-45ab-a50e-58e2343ed658" class="">I&#x27;ve developed many web projects at omg!medya with PHP, JavaScript and RoR.</p><h2 id="4614aee9-854e-4e27-a161-2f8e7352b72c" class="">ITpota &amp; Sektorel Consultancy</h2><p id="dcb2c26a-b233-483c-ba5a-7e0b2fb1da91" class="block-color-gray">Software Developer<em>, Istanbul – (2014 Sep - 2015 Jan)</em></p><p id="ff129736-6091-48ee-bc69-20b5b328b9ed" class="">We had a career platform and CRM for only IT jobs&#x27; recruitment at Sektorel. I&#x27;ve used PHP and Zend Fw at there.</p><h2 id="c877fda3-2f6a-4302-ae33-93c88e75a9d5" class="">Delta Agency</h2><p id="2dc4430d-3c5f-4d7b-b629-77078e5f1bbd" class="block-color-gray">Full Stack Web Developer<em>, Samsun – (2010 Jun - 2014 Sep)</em></p><p id="12ee70d6-5cfa-44f1-bb07-2fbf9828c623" class="">I&#x27;ve developed many web projects at Delta with PHP, JavaScript, and other front-end technologies.</p><hr id="8a9e1632-2083-4532-82cb-974cd2fda7e7"/><h1 id="536e3954-f77f-453a-a5fe-792e06e803eb" class="">Skills</h1><h2 id="35b98377-3cc2-4272-ac9f-2f0f829c4784" class="">Technology</h2><h3 id="3ae45581-766f-46d3-a2a6-bd0e641466fa" class="">Ruby</h3><p id="a677baf4-c3b6-4e26-84e0-0eeceebf5269" class="">is my main programming language, I&#x27;ve worked with it for over 4 years. I usually have used it for APIs and monolithic web applications with rails framework. I prefer to use PostgreSQL as a database at rails projects. I&#x27;ve some public repositories written with rails, you can check out one of them → <a href="https://github.com/murat/ecomm-api">https://github.com/murat/ecomm-api</a></p><h3 id="3fbed955-95f9-41c4-810d-cf698faf1eba" class="">PHP</h3><p id="8be9047b-daab-42b8-bc17-9316735f88f8" class="">is my ex main, but I&#x27;m still using it for toy projects sometimes.</p><h3 id="cb104fb4-4608-4f06-b613-cd5d8e30635d" class="">Elixir</h3><p id="2288550f-819c-4d16-8da5-cf19253992ef" class="">is my darling, but I did not any chance to use it in production. I really enjoying while solving Codewars and Hackerrank cases with functional paradigm You can check out the public repositories that I wrote with elixir and phoenix framework → <a href="https://github.com/murat/uprobot">https://github.com/murat/uprobot</a> &amp; <a href="https://github.com/hasbihal/backend">https://github.com/hasbihal/backend</a></p><p id="766c5ac0-1039-4ed3-9db3-8bebac44476e" class="">And alongside phoenix projects I&#x27;ve some CLI applications that written with pure elixir code.</p><h3 id="593803b8-1ceb-47d8-8288-474a6bf1f234" class="">Golang</h3><p id="3fdfb249-77ca-40a5-a85a-aedef2de0772" class="">I&#x27;m using it for some backend services and CLI applications. At Vispera I&#x27;ve developed some (micro/macro) services by using protobuf and GRPC protocol with golang. Check out my earthquake CLI app → <a href="https://github.com/murat/earthquake">https://github.com/murat/earthquake</a></p><h3 id="6c95099f-51d6-4c7e-8d9b-6b6e15f94610" class="">Elasticsearch</h3><p id="3e0777dd-7f66-4fd4-a504-efae813cf244" class="">is entered into my life at Vispera. We succeeded to generate exclusive reports with aggregate complex and unstructured data by using elasticsearch.</p><p id="a955e805-17fa-4ed5-bc6a-36f57ccf3d3a" class="">
+</p><hr id="dce513bb-4cf3-4d99-bcf1-dfb9ff2384f3"/><h2 id="491e903c-a9b1-4cf9-8e12-3cbc045d6a34" class="">Languages</h2><p id="1416fc08-aac2-4497-b4c5-3d2552ad88d0" class="">English</p><p id="1432ec70-01c3-4637-8b43-58f3e8d58e09" class="">Read/Write is not a problem for me, but currently, I can&#x27;t speak fast and fluently. I need more practice.</p><hr id="29ebe9c9-09c1-4d5c-8d48-8ad5a11dbbfa"/><h1 id="d168856e-ec1f-46b6-8ff9-46ee0a12b9d7" class="">Articles</h1><ul id="655c4a67-a3e1-48ef-bdad-1610bcec56d8" class="bulleted-list"><li>I scribbling about some technical challenges in Turkish at my <a href="http://murat.github.io">Github pages</a> blog and <a href="https://medium.com/@muratbastas">Medium profile</a>.</li></ul><hr id="c42a5480-456a-4ce1-b187-28953347bf05"/><h1 id="cf94320b-fce1-4465-9e1f-b87213d1052e" class="">Education</h1><h2 id="f692f0ad-eed2-4011-a7a2-5bf5fd07fef3" class="">Associate <strong>Degree in Computer Programming</strong></h2><p id="55764f50-35ca-4ca2-ab1e-212b0c93747e" class="block-color-gray"><em>2011 - 2013</em></p><p id="efa556dc-7c3a-458d-9730-3f9b335f9bc8" class=""><a href="http://www.omu.edu.tr/tr">Ondokuz Mayis University</a></p><p id="e4715b59-89e2-4d0e-be17-ae1ce2ce7038" class="">
+</p></div></article></body></html>
